@@ -1,0 +1,4 @@
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/usart.c:34:6:MX_USART1_UART_Init	8	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/usart.c:78:6:MX_USART2_UART_Init	8	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/usart.c:121:6:HAL_UART_MspInit	112	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/usart.c:245:6:HAL_UART_MspDeInit	8	static

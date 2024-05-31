@@ -1,0 +1,9 @@
+../Middlewares/LoRaWAN/LmhpClockSync.c:199:13:LmhpClockSyncIsInitialized	1
+../Middlewares/LoRaWAN/LmhpClockSync.c:204:13:LmhpClockSyncIsTxPending	1
+../Middlewares/LoRaWAN/LmhpClockSync.c:464:13:OnPeriodicTimeStartTimer	2
+../Middlewares/LoRaWAN/LmhpClockSync.c:245:13:LmhpClockSyncOnMcpsIndication	14
+../Middlewares/LoRaWAN/LmhpClockSync.c:220:13:LmhpClockSyncOnMcpsConfirm	2
+../Middlewares/LoRaWAN/LmhpClockSync.c:183:13:LmhpClockSyncInit	2
+../Middlewares/LoRaWAN/LmhpClockSync.c:178:15:LmhpClockSyncPackageFactory	1
+../Middlewares/LoRaWAN/LmhpClockSync.c:378:24:LmhpClockSyncAppTimeReq	4
+../Middlewares/LoRaWAN/LmhpClockSync.c:209:13:LmhpClockSyncProcess	3

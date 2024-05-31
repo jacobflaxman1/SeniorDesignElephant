@@ -1,0 +1,7 @@
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:174:13:LmhpFirmwareManagementIsInitialized	0	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:179:13:LmhpFirmwareManagementIsTxPending	0	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:184:13:LmhpFirmwareManagementProcess	0	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:357:13:OnRebootTimer	8	static,ignoring_inline_asm
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:189:13:LmhpFirmwareManagementOnMcpsIndication	40	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:157:13:LmhpFirmwareManagementInit	16	static
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Middlewares/Third_Party/LoRaWAN/LmHandler/Packages/LmhpFirmwareManagement.c:151:15:LmhpFirmwareManagementPackageFactory	0	static

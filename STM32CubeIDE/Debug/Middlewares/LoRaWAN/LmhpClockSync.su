@@ -1,0 +1,9 @@
+../Middlewares/LoRaWAN/LmhpClockSync.c:199:13:LmhpClockSyncIsInitialized	0	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:204:13:LmhpClockSyncIsTxPending	0	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:464:13:OnPeriodicTimeStartTimer	8	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:245:13:LmhpClockSyncOnMcpsIndication	40	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:220:13:LmhpClockSyncOnMcpsConfirm	48	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:183:13:LmhpClockSyncInit	16	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:178:15:LmhpClockSyncPackageFactory	0	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:378:24:LmhpClockSyncAppTimeReq	72	static
+../Middlewares/LoRaWAN/LmhpClockSync.c:209:13:LmhpClockSyncProcess	8	static

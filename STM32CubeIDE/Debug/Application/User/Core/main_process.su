@@ -1,0 +1,9 @@
+../Application/User/Core/main_process.c:67:6:compareTimeStamps	16	static
+../Application/User/Core/main_process.c:85:6:checkSubSeconds	16	static
+../Application/User/Core/main_process.c:104:6:checkIf1970	24	static
+../Application/User/Core/main_process.c:127:6:main_process	64	static,ignoring_inline_asm
+../Application/User/Core/main_process.c:228:6:get_data	0	static
+../Application/User/Core/main_process.c:241:6:write_data_to_sd	352	static
+../Application/User/Core/main_process.c:272:9:get_sd_card_size	24	static
+../Application/User/Core/main_process.c:290:6:printAxises	40	static
+../Application/User/Core/main_process.c:295:6:close_sd_card	8	static

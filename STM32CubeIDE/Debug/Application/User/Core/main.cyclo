@@ -1,0 +1,7 @@
+../Application/User/Core/main.c:181:6:Init_SD_Card	2
+../Application/User/Core/main.c:189:6:UART_ReceiveAndPrint	3
+../Application/User/Core/main.c:215:6:UART_SendFixedStringEveryFiveSeconds	1
+../Application/User/Core/main.c:226:6:open_sd_card	2
+../Application/User/Core/main.c:269:6:Error_Handler	1
+../Application/User/Core/main.c:135:6:SystemClock_Config	1
+../Application/User/Core/main.c:78:5:main	1
