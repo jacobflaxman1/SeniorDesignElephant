@@ -40,7 +40,6 @@
 #include <stdio.h>
 #include "radio_driver.h"
 #include "i2c.h"
-#include "usart.h"
 /* USER CODE END Includes */
 
 /* External variables ---------------------------------------------------------*/
@@ -493,23 +492,6 @@ void ResumeTasks(void) {
 	  UTIL_SEQ_ResumeTask((1 << CFG_SEQ_Task_LoRaStopJoinEvent));
 
 }
-
-void sendCurrentTime(UART_HandleTypeDef* huart)
-{
-
-	uint8_t tx_buff[]={0,1,2,3,4,5,6,7,8,9};
-
-
-
-	    while (1) {  // Infinite loop to send the string continuously
-	    	 HAL_UART_Transmit_DMA(&huart1, tx_buff, 10);
-	    	 HAL_Delay(5000);
-	    	  printf("Transmiotted Data\n");
-	    }
-
-}
-
-
 /* USER CODE END PrFD */
 
 static void OnRxData(LmHandlerAppData_t *appData, LmHandlerRxParams_t *params)
@@ -603,12 +585,12 @@ static void SendTxData(void)
 
 //  soc = read_soc (&hi2c1);
 
-//   status = LmHandlerDeviceTimeReq ( );
+   status = LmHandlerDeviceTimeReq ( );
 
 
   if (LmHandlerIsBusy() == false)
   {
-//    int soc_int = (int)(soc);
+    int soc_int = (int)(soc);
 
     // Log the SOC integer value
 //    APP_LOG(TS_ON, VLEVEL_M, "SOC BEFORE TRANSMISSION: %d\r\n", soc_int);
@@ -625,8 +607,6 @@ static void SendTxData(void)
       UTIL_TIMER_Stop(&JoinLedTimer);
       HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_RESET); // LED_RED
     }
-
-    status = LmHandlerDeviceTimeReq ( );
 
     status = LmHandlerSend(&AppData, LmHandlerParams.IsTxConfirmed, false);
     if (LORAMAC_HANDLER_SUCCESS == status)
@@ -719,6 +699,68 @@ static void OnTxData(LmHandlerTxParams_t *params)
 static void OnJoinRequest(LmHandlerJoinParams_t *joinParams)
 {
   /* USER CODE BEGIN OnJoinRequest_1 */
+  if (joinParams != NULL)
+  {
+    if (joinParams->Status == LORAMAC_HANDLER_SUCCESS)
+    {
+      UTIL_TIMER_Stop(&JoinLedTimer);
+      HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_RESET); /* LED_RED */
+
+      APP_LOG(TS_OFF, VLEVEL_M, "\r\n###### = JOINED = ");
+      if (joinParams->Mode == ACTIVATION_TYPE_ABP)
+      {
+        APP_LOG(TS_OFF, VLEVEL_M, "ABP ======================\r\n");
+      }
+      else
+      {
+  		LmHandlerErrorStatus_t status = LmHandlerDeviceTimeReq ( );
+        APP_LOG(TS_OFF, VLEVEL_M, "OTAA =====================\r\n");
+
+
+      }
+    }
+    else
+    {
+        APP_LOG(TS_OFF, VLEVEL_M, "\r\n###### = JOIN FAILED\r\n");
+
+        join_count++;
+        printf("JOIN COUNT: %d\n", join_count);
+
+        if ( join_count >= 10 )
+        {
+
+          APP_LOG(TS_OFF, VLEVEL_M, "FAILED TO JOIN AFTER %d TRIES ENTERING DATA COLLECTION MODE %d\r\n", join_count, join_count);
+
+          join_count = 0;
+          initial_join_process_failed = 1;		// there is a better way to do this but im lazy rn
+
+      	  if (SUBGRF_GetOperatingMode( ) == MODE_RX)
+      	  {
+      		 APP_LOG(TS_OFF, VLEVEL_M, "IN RX MODE\n");
+//      		  	  PauseTasks ( );
+      	  }
+
+        }
+
+        else if ( initial_join_process_failed )	// the initial join failed so now we will only ping once every set period
+        {
+        	  APP_LOG(TS_OFF, VLEVEL_M, "Still trying to ping the network but unsuccesfull\r\n");
+
+          	  if (SUBGRF_GetOperatingMode( ) == MODE_RX)
+          	  {
+
+          		 APP_LOG(TS_OFF, VLEVEL_M, "IN RX MODE\n");
+//          		 PauseTasks ( );
+          	  }
+        }
+
+
+
+
+    }
+
+    APP_LOG(TS_OFF, VLEVEL_H, "###### U/L FRAME:JOIN | DR:%d | PWR:%d\r\n", joinParams->Datarate, joinParams->TxPower);
+  }
   /* USER CODE END OnJoinRequest_1 */
 }
 
@@ -760,8 +802,6 @@ static void OnBeaconStatusChange(LmHandlerBeaconParams_t *params)
 static void OnSysTimeUpdate(void)
 {
   /* USER CODE BEGIN OnSysTimeUpdate_1 */
-		printf("Sending time to other chip\n");
-	  sendCurrentTime(&huart1);
 
   /* USER CODE END OnSysTimeUpdate_1 */
 }
