@@ -64,11 +64,11 @@ Application/User/Core/sys_app.o: \
  ../../Utilities/lpm/tiny_lpm/stm32_lpm.h ../../Core/Inc/timer_if.h \
  ../../Utilities/timer/stm32_timer.h ../../Core/Inc/utilities_def.h \
  ../../Core/Inc/sys_debug.h ../../Core/Inc/sys_sensors.h \
- /Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/STM32CubeIDE/Application/User/Core/main_process.h \
+ /Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/main_process.h \
  ../../Middlewares/Third_Party/FatFs/src/ff.h \
  ../../Middlewares/Third_Party/FatFs/src/integer.h \
  ../../FATFS/Target/ffconf.h ../../Core/Inc/main.h \
- /Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/STM32CubeIDE/Application/User/Core/icm20948.h \
+ /Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/icm20948.h \
  ../../Core/Inc/i2c.h
 ../../Core/Inc/platform.h:
 ../../Drivers/CMSIS/Device/ST/STM32WLxx/Include/stm32wlxx.h:
@@ -140,10 +140,10 @@ Application/User/Core/sys_app.o: \
 ../../Core/Inc/utilities_def.h:
 ../../Core/Inc/sys_debug.h:
 ../../Core/Inc/sys_sensors.h:
-/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/STM32CubeIDE/Application/User/Core/main_process.h:
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/main_process.h:
 ../../Middlewares/Third_Party/FatFs/src/ff.h:
 ../../Middlewares/Third_Party/FatFs/src/integer.h:
 ../../FATFS/Target/ffconf.h:
 ../../Core/Inc/main.h:
-/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/STM32CubeIDE/Application/User/Core/icm20948.h:
+/Users/jacobflaxman/Desktop/senior_design_1/LoRaWAN_End_Node/Core/Src/icm20948.h:
 ../../Core/Inc/i2c.h:

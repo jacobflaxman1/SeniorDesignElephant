@@ -141,9 +141,9 @@ void SystemApp_Init(void)
 void UTIL_SEQ_Idle(void)
 {
   /* USER CODE BEGIN UTIL_SEQ_Idle_1 */
-
+    main_process();
   /* USER CODE END UTIL_SEQ_Idle_1 */
-  UTIL_LPM_EnterLowPower();
+//  UTIL_LPM_EnterLowPower(); // this MUST REMAIN COMMENTED OUT
   /* USER CODE BEGIN UTIL_SEQ_Idle_2 */
 
   /* USER CODE END UTIL_SEQ_Idle_2 */
